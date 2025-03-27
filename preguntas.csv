@@ -1,0 +1,11 @@
+id,pregunta,opcion1,ir_a1,puntos1,opcion2,ir_a2,puntos2,opcion3,ir_a3,puntos3
+Q1,¿Qué debes hacer antes de ingresar a una planta de alimentos?,Lavarte las manos,Q2,10,No hacer nada,Q3,0,Usar solo desinfectante,Q4,5
+Q2,"Ya dentro, notas un derrame en el suelo. ¿Qué haces?",Lo reportas y señalizas,Q5,10,Lo ignoras y continúas,Q6,-5,Intentas limpiarlo tú solo,Q7,5
+Q3,Olvidaste lavarte las manos y entraste. ¿Qué consecuencia puede ocurrir?,Contaminación cruzada,Q6,-10,Ninguna,Q6,0,Mejor limpieza,Q6,-5
+Q4,Usaste solo desinfectante sin agua. ¿Es correcto?,"No, porque no remueve suciedad visible",Q2,5,"Sí, suficiente para higienizar",Q6,-5,Depende del producto,Q5,0
+Q5,Un operario tiene heridas expuestas en las manos. ¿Puede trabajar?,"No, debe cubrirlas o ser reasignado",FIN1,10,"Sí, si usa guantes",FIN2,0,"Sí, siempre",FIN3,-10
+Q6,La supervisora observa malas prácticas. ¿Qué debe hacer?,Capacitar y corregir,FIN1,10,Ignorar para evitar conflictos,FIN2,-5,Llamar la atención sin explicación,FIN3,-2
+Q7,El intento de limpieza no fue suficiente. ¿Qué hiciste mal?,No señalizaste la zona,FIN3,-2,No avisaste al encargado,FIN2,0,No usaste el protocolo adecuado,FIN1,5
+FIN1,¡Buen trabajo! Tomaste decisiones correctas para asegurar la inocuidad.,,,,,,,,,
+FIN2,¡Cuidado! Tus decisiones pueden poner en riesgo la seguridad alimentaria.,,,,,,,,,
+FIN3,¡Atención! Es necesario reforzar tus conocimientos en buenas prácticas.,,,,,,,,,
