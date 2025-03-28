@@ -2,10 +2,11 @@ import streamlit as st
 import pandas as pd
 import os
 import re
+import gspread
+from google.oauth2 import service_account
 
 ARCHIVO_PREGUNTAS = "preguntas.csv"
-ARCHIVO_RESULTADOS = "resultados.csv"
-# Revision
+
 # Clase para nombres de columnas (evita errores de tipeo)
 class Columnas:
     ID = "id"
@@ -51,21 +52,20 @@ if not st.session_state.usuario or not st.session_state.inicio_confirmado:
             st.warning("Por favor, introduce un correo válido.")
     st.stop()
 
-# Guardar resultados
-def guardar_resultado():
-    resultado = {
-        "correo": st.session_state.usuario,
-        "puntos": st.session_state.puntos,
-        "historial": " > ".join(st.session_state.historial)
-    }
-    df = pd.DataFrame([resultado])
-    try:
-        if os.path.exists(ARCHIVO_RESULTADOS):
-            df.to_csv(ARCHIVO_RESULTADOS, mode='a', header=False, index=False)
-        else:
-            df.to_csv(ARCHIVO_RESULTADOS, index=False)
-    except Exception as e:
-        st.error(f"No se pudo guardar el resultado: {e}")
+# Guardar resultados en Google Sheets
+def guardar_resultado_google():
+    scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
+    credentials = service_account.Credentials.from_service_account_info(
+        st.secrets["gcp_service_account"], scopes=scope
+    )
+    client = gspread.authorize(credentials)
+    sheet = client.open_by_key(st.secrets["sheets"]["sheet_id"]).sheet1
+
+    sheet.append_row([
+        st.session_state.usuario,
+        st.session_state.puntos,
+        " > ".join(st.session_state.historial)
+    ])
 
 # Mostrar final del juego
 def mostrar_final():
@@ -74,7 +74,7 @@ def mostrar_final():
         st.success(final.iloc[0][Columnas.PREGUNTA])
 
     if 'guardado' not in st.session_state:
-        guardar_resultado()
+        guardar_resultado_google()
         st.session_state.guardado = True
 
     col1, col2 = st.columns(2)
