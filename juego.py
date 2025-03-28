@@ -5,7 +5,7 @@ import re
 
 ARCHIVO_PREGUNTAS = "preguntas.csv"
 ARCHIVO_RESULTADOS = "resultados.csv"
-
+# Revision
 # Clase para nombres de columnas (evita errores de tipeo)
 class Columnas:
     ID = "id"
