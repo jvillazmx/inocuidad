@@ -7,6 +7,23 @@ from google.oauth2 import service_account
 
 ARCHIVO_PREGUNTAS = "preguntas.csv"
 
+# Credenciales embebidas directamente en el código (no para producción)
+SERVICE_ACCOUNT_INFO = {
+    "type": "service_account",
+    "project_id": "encouraging-key-455121-q7",
+    "private_key_id": "c4bc2d2ca3f15959cb0d9226664efa8c855582cd",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8mTQx2DhTwX4Q\n... (recorta por brevedad) ...\n-----END PRIVATE KEY-----\n",
+    "client_email": "streamlit-sheets@encouraging-key-455121-q7.iam.gserviceaccount.com",
+    "client_id": "111324100562432468989",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/streamlit-sheets@encouraging-key-455121-q7.iam.gserviceaccount.com",
+    "universe_domain": "googleapis.com"
+}
+
+SHEET_ID = "1JKFHKOJQcC1UHrnDIs5w7JrclKaXlBuEUsrvxQ4NvEY"
+
 # Clase para nombres de columnas (evita errores de tipeo)
 class Columnas:
     ID = "id"
@@ -56,10 +73,10 @@ if not st.session_state.usuario or not st.session_state.inicio_confirmado:
 def guardar_resultado_google():
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
     credentials = service_account.Credentials.from_service_account_info(
-        st.secrets["gcp_service_account"], scopes=scope
+        SERVICE_ACCOUNT_INFO, scopes=scope
     )
     client = gspread.authorize(credentials)
-    sheet = client.open_by_key(st.secrets["sheets"]["sheet_id"]).sheet1
+    sheet = client.open_by_key(SHEET_ID).sheet1
 
     sheet.append_row([
         st.session_state.usuario,
@@ -134,4 +151,3 @@ st.sidebar.markdown("### Progreso")
 st.sidebar.write("Correo:", st.session_state.usuario)
 st.sidebar.write("Puntos:", st.session_state.puntos)
 st.sidebar.write("Historial:", st.session_state.historial)
-
