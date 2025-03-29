@@ -12,7 +12,7 @@ SERVICE_ACCOUNT_INFO = {
     "type": "service_account",
     "project_id": "encouraging-key-455121-q7",
     "private_key_id": "c4bc2d2ca3f15959cb0d9226664efa8c855582cd",
-    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANB...muy largo...\n-----END PRIVATE KEY-----\n"
+    "private_key": "-----BEGIN PRIVATE KEY-----\\nMIIEvAIBADANB...muy largo...\\n-----END PRIVATE KEY-----\\n",
     "client_email": "streamlit-sheets@encouraging-key-455121-q7.iam.gserviceaccount.com",
     "client_id": "111324100562432468989",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
