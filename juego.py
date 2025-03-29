@@ -7,12 +7,12 @@ from google.oauth2 import service_account
 
 ARCHIVO_PREGUNTAS = "preguntas.csv"
 
-# Credenciales completas embebidas (temporalmente)
+# Credenciales completas embebidas correctamente desde JSON
 SERVICE_ACCOUNT_INFO = {
     "type": "service_account",
     "project_id": "encouraging-key-455121-q7",
     "private_key_id": "c4bc2d2ca3f15959cb0d9226664efa8c855582cd",
-    "private_key": "-----BEGIN PRIVATE KEY-----\\nMIIEvAIBADANB...muy largo...\\n-----END PRIVATE KEY-----\\n",
+    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC8mTQx2DhTwX4Q\nrdOQvYFJt7o2u2ou6y0c/Vp9vf11Sw945IhelxaTgZe6m6+HEZjWLbQuaTNqtfsR\nClf/pwKlkS2C42/XELU1QeOh8lAlz1MnPCs5oqOjg4xvyiJ59vNy+wudfd36yJsL\ntVk9zDBbp15E3Xb23goWcIL8xvO0wjhAxOWUibpA4SdjvIqF9ELOyg1V5U4p7Aa7\nWhokl4yEpDJCUlySqUmQNmwq/VNKVtfznCn7rz9Y/PX00+KWn4NpIla3W5k9qLtq\nAa5xwUOkbzctIm2EfY2Uu7Qfa7LLleIzJLQFTgBuND6OPkza1wEZuLcqbOemFMhy\n6fVJ35BxAgMBAAECggEADVEWBeT6CTPy5lOXyjMPU3i1HdM66qgxbcgX4SQOpv8P\nTx534JHzhqPSZltC2BsuewUMIXDNMB48ZZYg44zT24P2PjU3+uwTl3iZDaDR9vF+\nMhmGBdJNkqihvGz95TXCN96xEcRG7cPHatq5u+rUiUw2lE887K598Nqt7RJRN/SV\nkMkpg576cLL4fQnNc7RuNCfzXGjASuAThUrveadOorjOd/6ZCfayKU+X+zaLUTpl\nkbk2LP9iRUgFElNCBBxsPXeS1/0dgL8gwgEvsHkMZlRXlybZAh1vIdKlNvJcaECY\n6oCTprX1IboIFI5WPDSFFsLVCak7noFehJ94UeDs/wKBgQD2AK84FNBHJykJGAMe\nu1ZOxHduHGQCXT6vZKqp/YoerbHAGkWbg5zOEnEtLdcFvC3i+5XjJYglvJxfYHAj\nsqrwuwzdTig4aIoRu7K6nhNXp4kpjSDcLwcs0fNd95QvzBb8pZHJwJLQzjIUTb5i\nrgQOa5sbz0w0F945uGYrvwmQ1wKBgQDEQ07yTZqFgz/zJQLHIHRpdI8dcsGt2Yvu\nyc/JTFLQVn5tIhldlmEzRM2ORnL6D2geF/waZt7Ox4okiwWnFPIlpcSwEKk2oT+p\nbLNEZM1S5H0Ou1adlvBD3m2NTldlM39ioRpOTSllI2pfqPN+KFtFexYC4/NLbWh7\n3Uj0wbqX9wKBgE0NE9Sd+EqBAoJdqgSDKtpLARlU/SIccJjhD+9kgVFwl/8Se4Dl\nLUUCU76R4Apk0X6JzH2z8LvZIqVhAF6+BHqYK8RZSZG5dJ1vS+DVyDspN3XzRTqR\n5E5uiCqDdD+wTfbeKRanIZUTMG5Zl2szFAQsQg3o1PZwD2PG1QGYuXdLAoGAcf4q\nL4A1fNCz5xSbHW9TTiD+MvuBVOmjZilff6rN+uYR/m8sznfWswGGZtmyVF14euox\namBPj0jEit8YhGgdERLMP/sdXXag1FYndVUbEMdXf6P99gBCQxlBBi73gfc8SNwL\nvGkC3xSH51HpQ2BLSvrn2PvvRuMgKbloc4jGSRcCgYEA81LlTF1rWC5JeZDg/tog\nsTQluqWETTR77K7vNuTh/MHXMPvYoeonZ1ZqhxytuZfBEHPIZTFCeKeFDAO9hkl7\nCPuuMySYl6ddeQWyCmsPZTlLz/OtvORcDPlC4U7ocFvXeVUFNDxmDVeGlW/OYqpe\nQeFi0XAcF7NKA5Xh5X771fE=\n-----END PRIVATE KEY-----\n",
     "client_email": "streamlit-sheets@encouraging-key-455121-q7.iam.gserviceaccount.com",
     "client_id": "111324100562432468989",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
@@ -23,6 +23,7 @@ SERVICE_ACCOUNT_INFO = {
 }
 
 SHEET_ID = "1JKFHKOJQcC1UHrnDIs5w7JrclKaXlBuEUsrvxQ4NvEY"
+
 
 # Clase para nombres de columnas
 class Columnas:
