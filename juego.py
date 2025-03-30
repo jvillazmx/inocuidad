@@ -1,13 +1,12 @@
 import streamlit as st
 import pandas as pd
-import os
 import re
 import json
+import requests
 from datetime import datetime
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
 
 ARCHIVO_PREGUNTAS = "preguntas.csv"
+WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz1gMkOUoUJgmSytJunH0RFrQbBLcHwz1973vJgMKvJ5CsifCxldpK8rM0eji5NyLvqdg/exec"
 
 class Columnas:
     ID = "id"
@@ -38,30 +37,19 @@ st.session_state.setdefault("current_q", "Q1")
 st.session_state.setdefault("puntos", 0)
 st.session_state.setdefault("historial", [])
 
-def guardar_resultado_en_sheets():
+def guardar_resultado_en_google_apps_script():
     try:
-        scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-        credentials_dict = st.secrets["gcp_service_account"]
-        credentials = ServiceAccountCredentials.from_json_keyfile_dict(credentials_dict, scope)
-        client = gspread.authorize(credentials)
-
-        # Conecta a la hoja
-        sheet_url = "https://docs.google.com/spreadsheets/d/17SaOVSxDGvMU_kBYwrjN651CKH8qEOjGj3RWoUfgqLc"
-        spreadsheet = client.open_by_url(sheet_url)
-        worksheet = spreadsheet.sheet1  # o get_worksheet(0)
-
-        # Datos a guardar
-        nueva_fila = [
-            st.session_state.usuario,
-            st.session_state.puntos,
-            datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        ]
-
-        worksheet.append_row(nueva_fila)
-        st.success("¡Resultado guardado en Google Sheets! ✅")
-
+        payload = {
+            "usuario": st.session_state.usuario,
+            "puntos": st.session_state.puntos
+        }
+        response = requests.post(WEB_APP_URL, json=payload)
+        if response.status_code == 200:
+            st.success("¡Resultado enviado correctamente a Google Sheets! ✅")
+        else:
+            st.error(f"Error al guardar el resultado: {response.text}")
     except Exception as e:
-        st.error(f"No se pudo guardar el resultado en Google Sheets: {e}")
+        st.error(f"No se pudo conectar con Google Apps Script: {e}")
 
 def mostrar_final():
     final = preguntas_df[preguntas_df[Columnas.ID] == st.session_state.current_q]
@@ -69,7 +57,7 @@ def mostrar_final():
         st.success(final.iloc[0][Columnas.PREGUNTA])
 
     if 'guardado' not in st.session_state:
-        guardar_resultado_en_sheets()
+        guardar_resultado_en_google_apps_script()
         st.session_state.guardado = True
 
     col1, col2 = st.columns(2)
