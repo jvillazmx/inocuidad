@@ -1,0 +1,5 @@
+# Ignorar archivos confidenciales y temporales
+.streamlit/secrets.toml
+*.pyc
+__pycache__/
+resultados.csv
