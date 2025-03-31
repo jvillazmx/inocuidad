@@ -3,9 +3,21 @@ import pandas as pd
 import re
 import json
 import requests
+import random
+import os
 from datetime import datetime
 
-ARCHIVO_PREGUNTAS = "preguntas.csv"
+# Lista de archivos disponibles
+ARCHIVOS_CUESTIONARIOS = [
+    "cuestionarios/117_10_01.csv",
+    "cuestionarios/117_10_02.csv",
+    "cuestionarios/117_10_03.csv",
+    "cuestionarios/117_10_04.csv",
+    "cuestionarios/117_10_05.csv",
+    "cuestionarios/117_10_06.csv",
+    "cuestionarios/117_10_07.csv",
+]
+
 WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz1gMkOUoUJgmSytJunH0RFrQbBLcHwz1973vJgMKvJ5CsifCxldpK8rM0eji5NyLvqdg/exec"
 
 class Columnas:
@@ -22,37 +34,32 @@ class Columnas:
     PUNTOS3 = "puntos3"
 
 @st.cache_data
-def cargar_preguntas():
+def cargar_preguntas(archivo):
     try:
-        return pd.read_csv(ARCHIVO_PREGUNTAS)
+        return pd.read_csv(archivo)
     except Exception as e:
         st.error(f"No se pudo cargar el archivo de preguntas: {e}")
         st.stop()
 
-preguntas_df = cargar_preguntas()
-
-st.session_state.setdefault("usuario", "")
-st.session_state.setdefault("inicio_confirmado", False)
-st.session_state.setdefault("current_q", "Q1")
-st.session_state.setdefault("puntos", 0)
-st.session_state.setdefault("historial", [])
-
 def guardar_resultado_en_google_apps_script():
     try:
         payload = {
+            "cuestionario": os.path.basename(st.session_state.archivo_usado),
             "usuario": st.session_state.usuario,
-            "puntos": st.session_state.puntos
+            "puntos": st.session_state.puntos,
+            "respuestas": " > ".join(st.session_state.historial),
+            "historial": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         }
         response = requests.post(WEB_APP_URL, json=payload)
         if response.status_code == 200:
-            st.success("¡Resultado enviado correctamente a Google Sheets! ✅")
+            st.success("\u00a1Resultado enviado correctamente a Google Sheets! ✅")
         else:
             st.error(f"Error al guardar el resultado: {response.text}")
     except Exception as e:
         st.error(f"No se pudo conectar con Google Apps Script: {e}")
 
 def mostrar_final():
-    final = preguntas_df[preguntas_df[Columnas.ID] == st.session_state.current_q]
+    final = st.session_state.preguntas_df[st.session_state.preguntas_df[Columnas.ID] == st.session_state.current_q]
     if not final.empty:
         st.success(final.iloc[0][Columnas.PREGUNTA])
 
@@ -72,7 +79,7 @@ def mostrar_final():
     st.stop()
 
 def mostrar_pregunta():
-    pregunta_actual = preguntas_df[preguntas_df[Columnas.ID] == st.session_state.current_q]
+    pregunta_actual = st.session_state.preguntas_df[st.session_state.preguntas_df[Columnas.ID] == st.session_state.current_q]
     if pregunta_actual.empty:
         st.error("Pregunta no encontrada.")
         st.stop()
@@ -105,6 +112,13 @@ def mostrar_pregunta():
         del st.session_state["respuesta"]
         st.rerun()
 
+# Inicialización de estado
+st.session_state.setdefault("usuario", "")
+st.session_state.setdefault("inicio_confirmado", False)
+st.session_state.setdefault("current_q", "Q1")
+st.session_state.setdefault("puntos", 0)
+st.session_state.setdefault("historial", [])
+
 if not st.session_state.usuario or not st.session_state.inicio_confirmado:
     st.markdown("### Bienvenido al juego")
     correo = st.text_input("Ingresa tu correo electrónico:", key="correo_input")
@@ -112,16 +126,25 @@ if not st.session_state.usuario or not st.session_state.inicio_confirmado:
         if re.fullmatch(r"[^@]+@[^@]+\.[a-zA-Z]{2,}", correo):
             st.session_state.usuario = correo
             st.session_state.inicio_confirmado = True
+            st.session_state.archivo_usado = random.choice(ARCHIVOS_CUESTIONARIOS)
+            st.session_state.preguntas_df = cargar_preguntas(st.session_state.archivo_usado)
             st.rerun()
         else:
             st.warning("Por favor, introduce un correo válido.")
     st.stop()
 
+# Cargar preguntas si no están ya cargadas
+if "preguntas_df" not in st.session_state:
+    st.session_state.archivo_usado = random.choice(ARCHIVOS_CUESTIONARIOS)
+    st.session_state.preguntas_df = cargar_preguntas(st.session_state.archivo_usado)
+
+# Mostrar preguntas
 if st.session_state.current_q.startswith("FIN"):
     mostrar_final()
 else:
     mostrar_pregunta()
 
+# Barra lateral con progreso
 st.sidebar.markdown("### Progreso")
 st.sidebar.write("Correo:", st.session_state.usuario)
 st.sidebar.write("Puntos:", st.session_state.puntos)
