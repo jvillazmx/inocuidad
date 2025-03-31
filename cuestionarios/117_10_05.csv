@@ -1,0 +1,10 @@
+id,pregunta,opcion1,ir_a1,puntos1,opcion2,ir_a2,puntos2,opcion3,ir_a3,puntos3
+Q1,Un operario regresa a su estación sin lavarse las manos después del receso. ¿Qué haces?,Le recuerdas que debe hacerlo antes de retomar actividades,Q2,10,"No intervienes, no es tu responsabilidad",Q3,-10,Lo haces tú por él para avanzar más rápido,Q3,-5
+Q2,¿Cuándo deben lavarse las manos los trabajadores de una planta de alimentos?,"Antes de comenzar, después de recesos y cuando se contaminen",Q4,10,Solo al inicio del turno,Q5,-10,Después del almuerzo únicamente,Q5,-5
+Q3,"Si permites esa conducta, ¿qué podría pasar?",Riesgo de contaminación del alimento,Q4,10,Nada si el producto está empaquetado,Q5,-10,Solo es una infracción menor,Q5,-5
+Q4,¿Qué elementos debe tener una estación de lavado de manos adecuada?,"Agua potable, jabón, toallas desechables o secador",Q6,10,Solo agua y jabón,Q6,-5,"Agua, jabón y desinfectante en gel",Q6,0
+Q5,¿Qué indica el incumplimiento de lavado de manos en una planta?,Falta de capacitación o conciencia en BPM,FIN13,10,Falta de tiempo o recursos,FIN14,-5,Es un hábito difícil de mantener,FIN14,-10
+Q6,¿Qué acción complementa el lavado de manos cuando se manipulan alimentos directamente?,Uso de guantes limpios en buen estado,FIN15,10,Uso de guantes reutilizables sin cambiar,FIN14,-10,Solo uso de gel desinfectante,FIN14,-5
+FIN13,Tu evaluación ha sido adecuada. Has identificado la importancia del lavado de manos en la prevención de la contaminación.,,,,,,,,,
+FIN14,Es necesario reforzar tu comprensión sobre el lavado de manos. No es opcional ni sustituto de otros métodos.,,,,,,,,,
+FIN15,¡Muy bien! El uso adecuado de guantes como complemento del lavado de manos es esencial en la manipulación de alimentos.,,,,,,,,,

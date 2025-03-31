@@ -1,0 +1,10 @@
+id,pregunta,opcion1,ir_a1,puntos1,opcion2,ir_a2,puntos2,opcion3,ir_a3,puntos3
+Q1,"Al revisar los registros, notas que varios empleados no han recibido capacitación en higiene. ¿Qué haces?",Informas al responsable y propones una capacitación inmediata,Q2,10,Ignoras la situación si no ha habido incidentes,Q3,-10,Solo capacitas al personal nuevo,Q3,-5
+Q2,¿Con qué frecuencia debe capacitarse el personal en higiene y BPM?,Inicialmente y de forma periódica según necesidad,Q4,10,Solo una vez al ser contratado,Q5,-10,Una vez al año sin excepción,Q5,-5
+Q3,"Si no se capacita al personal, ¿cuál es el mayor riesgo?",Contaminación por malas prácticas,Q4,10,Confusión sobre horarios de trabajo,Q5,-10,Problemas de liderazgo,Q5,-5
+Q4,¿Qué debe incluir una capacitación efectiva en higiene personal?,"Prácticas correctas, riesgos, y consecuencias de incumplimiento",Q6,10,Solamente normas básicas generales,Q6,-5,Solo videos informativos sin seguimiento,Q6,-10
+Q5,¿Quién debe garantizar que todos reciban formación adecuada en higiene?,La gerencia o responsables de calidad,FIN16,10,Cada trabajador por su cuenta,FIN17,-10,Solo los supervisores de turno,FIN17,-5
+Q6,¿Cómo se puede verificar que la capacitación fue efectiva?,Mediante evaluaciones y observación del comportamiento,FIN18,10,Con asistencia firmada y fotos del evento,FIN17,-5,Basta con que los trabajadores digan que entendieron,FIN17,-10
+FIN16,Has identificado correctamente la responsabilidad de la capacitación. La formación continua es parte fundamental del sistema de inocuidad.,,,,,,,,,
+FIN17,"Tu comprensión de la capacitación en higiene es incompleta. La formación es obligatoria, estructurada y debe ser verificada.",,,,,,,,,
+FIN18,"¡Excelente! Sabes que la capacitación no es solo cumplir con una actividad, sino asegurar que el conocimiento se aplique en la práctica.",,,,,,,,,

@@ -1,0 +1,10 @@
+id,pregunta,opcion1,ir_a1,puntos1,opcion2,ir_a2,puntos2,opcion3,ir_a3,puntos3
+Q1,Estás por entrar a una planta de alimentos. ¿Qué es lo primero que debes hacer?,Lavarme bien las manos en la estación sanitaria,Q2,10,Solo ponerme la cofia y pasar,Q3,-5,"Entrar directo, el turno está por comenzar",Q3,-10
+Q2,Notas que tienes un pequeño corte en la mano. ¿Qué haces?,Cubrirlo completamente con un vendaje impermeable,Q4,10,"Ignorarlo, es muy pequeño",Q5,-10,Solo ponerme guantes encima,Q5,-5
+Q3,Un supervisor te detiene y te pregunta si cumpliste el protocolo de ingreso. ¿Qué respondes?,"Sí, aunque no lo hice realmente",Q5,-10,"No, lo haré ahora mismo",Q2,5,"Eso no es importante, siempre estoy limpio",Q5,-10
+Q4,¿Cuál de estas prácticas es correcta durante la manipulación de alimentos?,Retirar joyas o accesorios sueltos,Q6,10,Usar reloj y anillo bajo los guantes,Q6,-5,No importa si llevo una pulsera pequeña,Q6,-10
+Q5,Tu conducta fue observada por otro operario. ¿Qué podría causar esto?,"Nada, no afectará la producción",FIN1,-10,Podría generar contaminación del alimento,FIN2,-5,Depende de si el producto es crudo o cocido,FIN2,-5
+Q6,Alguien estornuda cerca de una zona de trabajo. ¿Qué medida es la más adecuada?,Solicitar que se retire y avise a su supervisor,FIN3,10,Ignorarlo si no fue directamente sobre el alimento,FIN2,-5,Limpiar la superficie si ves algo visible,FIN2,0
+FIN1,Tu ingreso y conducta presentan fallas graves. Debes reforzar tu conocimiento en higiene personal y protocolos de ingreso.,,,,,,,,,
+FIN2,Has cometido algunos errores. Revisa tus hábitos de higiene y asegúrate de reportar condiciones de salud o prácticas incorrectas.,,,,,,,,,
+FIN3,¡Buen trabajo! Has demostrado conocimiento y responsabilidad en higiene personal según las BPM.,,,,,,,,,

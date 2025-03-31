@@ -1,0 +1,10 @@
+id,pregunta,opcion1,ir_a1,puntos1,opcion2,ir_a2,puntos2,opcion3,ir_a3,puntos3
+Q1,Un nuevo operario ingresa a la planta con barba. ¿Qué acción es la correcta?,Pedirle que use una red para barba,Q2,10,Permitirle trabajar así porque su barba está bien recortada,Q3,-5,"No decir nada, no es tu responsabilidad",Q3,-10
+Q2,El operario olvida usar la red para barba. ¿Qué deberías hacer?,Recordarle la importancia del uso de protección,Q4,10,"Ignorarlo, alguien más se lo dirá",Q5,-5,Informar directamente al supervisor,Q4,5
+Q3,"Durante la jornada, se encuentra un cabello en un producto. ¿Qué acción es más adecuada?",Revisar el área y reforzar medidas con el personal,Q4,10,Desestimar el incidente si es aislado,Q5,-10,Cambiar solo al operario con barba,Q5,-5
+Q4,Un operario tose repetidamente sin cubrirse. ¿Qué medida debes tomar?,Indicarle que se retire e informe a su supervisor,Q6,10,Ofrecerle una mascarilla sin retirarlo,Q6,0,Ignorarlo si no hay alimentos expuestos,Q6,-10
+Q5,"Si no se corrige el uso de protección personal, ¿qué consecuencias pueden surgir?",Riesgo de contaminación física del alimento,FIN4,10,Solo una amonestación interna,FIN5,-5,Ninguna si nadie nota el problema,FIN5,-10
+Q6,¿Qué debe incluir una buena práctica de higiene personal?,"Lavado de manos, protección de cabello y reporte de enfermedades",FIN6,10,Solo lavado de manos y uso de uniforme,FIN5,0,Estar bien presentado y limpio al entrar,FIN5,-5
+FIN4,Has comprendido el impacto de no seguir adecuadamente las prácticas de higiene. La contaminación física puede comprometer la inocuidad del alimento.,,,,,,,,,
+FIN5,Tu comprensión sobre higiene personal aún presenta fallos. Recuerda que una mala práctica puede representar un riesgo real para el consumidor.,,,,,,,,,
+FIN6,¡Excelente! Has demostrado conciencia y responsabilidad en tus decisiones relacionadas con la higiene personal.,,,,,,,,,

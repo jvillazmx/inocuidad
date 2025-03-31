@@ -1,0 +1,10 @@
+id,pregunta,opcion1,ir_a1,puntos1,opcion2,ir_a2,puntos2,opcion3,ir_a3,puntos3
+Q1,Una trabajadora llega maquillada a su turno. ¿Qué consideras correcto?,Evitar el uso de cosméticos que puedan contaminar el producto,Q2,10,El maquillaje no afecta si es discreto,Q3,-5,"No está regulado, así que no importa",Q3,-10
+Q2,¿Qué productos personales pueden representar riesgo en la planta?,"Perfumes, cremas, maquillaje y medicamentos tópicos",Q4,10,Solo perfumes y desodorantes fuertes,Q5,-5,Ninguno si se usan con moderación,Q5,-10
+Q3,Un inspector encuentra restos de maquillaje en el área de empaque. ¿Qué podría implicar?,Contaminación por contacto físico o partículas,Q4,10,Falla estética pero sin impacto real,Q5,-10,Probablemente sea un error sin consecuencias,Q5,-5
+Q4,"En cuanto al uso de medicamentos tópicos, ¿qué es lo más apropiado?",Notificar al supervisor y cubrir la zona afectada,Q6,10,Solo cubrir la zona sin informar,Q6,-5,No hacer nada si el área está cubierta por la ropa,Q6,-10
+Q5,"Si los operarios no reciben instrucciones claras sobre productos personales, ¿qué puede ocurrir?",Desconocimiento y posibles riesgos de contaminación,FIN7,10,"Poca motivación, pero sin riesgos reales",FIN8,-5,Solo se afecta la imagen del trabajador,FIN8,-10
+Q6,¿Cuál es el objetivo de las restricciones sobre cosméticos y productos personales?,Prevenir contaminación del alimento con sustancias externas,FIN9,10,Mantener estándares visuales dentro de planta,FIN8,-5,Evitar distracciones entre operarios,FIN8,0
+FIN7,Reconoces que la falta de orientación puede afectar la inocuidad. Es clave comunicar claramente lo que está permitido o no en planta.,,,,,,,,,
+FIN8,Tu enfoque no refleja una comprensión completa del impacto de productos personales. Revisa los riesgos asociados al contacto físico o indirecto.,,,,,,,,,
+FIN9,¡Muy bien! Has identificado correctamente la razón detrás de las restricciones sobre cosméticos y productos personales.,,,,,,,,,
