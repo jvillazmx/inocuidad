@@ -1,10 +1,10 @@
 id,pregunta,opcion1,ir_a1,puntos1,opcion2,ir_a2,puntos2,opcion3,ir_a3,puntos3
-Q1,🔹 Un visitante ingresa al área de producción sin bata ni protección. ¿Qué haces?,🛠️ Lo detienes y le proporcionas el equipo necesario,Q2,10.0,🤷 Lo dejas pasar si no toca nada,Q3,-10.0,🧑‍💼 Solo informas al supervisor más tarde,Q3,-5.0
-Q2,🛠️ ¿Qué equipo de protección es indispensable al ingresar a zona de alimentos?,"🔹 Bata, protección de cabello, y calzado adecuado",Q4,10.0,🔹 Solo bata y cubrebocas,Q5,-5.0,🎓 Cofia únicamente si se tiene cabello largo,Q5,-10.0
-Q3,🔹 ¿Qué consecuencias puede tener el ingreso de personas sin protección adecuada?,🔹 Contaminación del área y riesgos para el producto,Q4,10.0,🔹 Incómoda pero sin impacto real,Q5,-10.0,🔹 Solo afecta la imagen de la planta,Q5,-5.0
-Q4,🔹 Un nuevo empleado insiste en usar sus propios guantes reutilizables. ¿Qué haces?,🧤 Explicas que deben ser guantes aprobados y limpios,Q6,10.0,🧽 Permites su uso si están limpios,Q6,-5.0,🔹 Lo dejas bajo su propio criterio,Q6,-10.0
-Q5,🛠️ ¿Por qué es importante estandarizar el equipo de protección personal?,🔹 Para garantizar condiciones higiénicas uniformes,❌ FIN19,10.0,🔹 Para facilitar la compra en volumen,❌ FIN20,-5.0,🔹 Por comodidad del personal,❌ FIN20,-10.0
-Q6,🔹 ¿Cuál es el rol del personal al detectar incumplimientos en el uso de protección?,🔹 Reportar o intervenir para corregir de inmediato,❌ FIN21,10.0,🔹 Ignorar si no es su responsabilidad directa,❌ FIN20,-5.0,🔹 Esperar a que otro lo corrija,❌ FIN20,-10.0
-FIN19,🛠️ Muy bien. Reconoces que el equipo de protección estandarizado es clave para mantener una producción inocua.,🔹 nan,nan,,🔹 nan,nan,,🔹 nan,nan,
-FIN20,"🛠️ Tu comprensión sobre el uso de equipo de protección es limitada. No basta con buena intención, se requiere control y estandarización.",🔹 nan,nan,,🔹 nan,nan,,🔹 nan,nan,
-FIN21,🔹 ¡Excelente! Has demostrado compromiso al comprender tu responsabilidad en el cumplimiento de medidas de protección.,🔹 nan,nan,,🔹 nan,nan,,🔹 nan,nan,
+Q1,Un visitante ingresa al área de producción sin bata ni protección. ¿Qué haces?,Lo detienes y le proporcionas el equipo necesario,Q2,10,Lo dejas pasar si no toca nada,Q3,-10,Solo informas al supervisor más tarde,Q3,-5
+Q2,¿Qué equipo de protección es indispensable al ingresar a zona de alimentos?,"Bata, protección de cabello, y calzado adecuado",Q4,10,Solo bata y cubrebocas,Q5,-5,Cofia únicamente si se tiene cabello largo,Q5,-10
+Q3,¿Qué consecuencias puede tener el ingreso de personas sin protección adecuada?,Contaminación del área y riesgos para el producto,Q4,10,Incómoda pero sin impacto real,Q5,-10,Solo afecta la imagen de la planta,Q5,-5
+Q4,Un nuevo empleado insiste en usar sus propios guantes reutilizables. ¿Qué haces?,Explicas que deben ser guantes aprobados y limpios,Q6,10,Permites su uso si están limpios,Q6,-5,Lo dejas bajo su propio criterio,Q6,-10
+Q5,¿Por qué es importante estandarizar el equipo de protección personal?,Para garantizar condiciones higiénicas uniformes,FIN19,10,Para facilitar la compra en volumen,FIN20,-5,Por comodidad del personal,FIN20,-10
+Q6,¿Cuál es el rol del personal al detectar incumplimientos en el uso de protección?,Reportar o intervenir para corregir de inmediato,FIN21,10,Ignorar si no es su responsabilidad directa,FIN20,-5,Esperar a que otro lo corrija,FIN20,-10
+FIN19,Muy bien. Reconoces que el equipo de protección estandarizado es clave para mantener una producción inocua.,,,,,,,,,
+FIN20,"Tu comprensión sobre el uso de equipo de protección es limitada. No basta con buena intención, se requiere control y estandarización.",,,,,,,,,
+FIN21,¡Excelente! Has demostrado compromiso al comprender tu responsabilidad en el cumplimiento de medidas de protección.,,,,,,,,,
