@@ -18,7 +18,8 @@ ARCHIVOS_CUESTIONARIOS = [
     "cuestionarios/117_10_07.csv",
 ]
 
-WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz1gMkOUoUJgmSytJunH0RFrQbBLcHwz1973vJgMKvJ5CsifCxldpK8rM0eji5NyLvqdg/exec"
+WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxruyVe3qVkNICk613EpS_N86xFwYA5cB5UpyS1Y9WAzWkfK22BGkRReUbBr0mB52GAHQ/exec"
+
 
 class Columnas:
     ID = "id"
